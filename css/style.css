@@ -1,0 +1,129 @@
+/* ===== 난다스토리 웹 v_0001 — Pixar/Apple 구조 참조 · 컬러는 우리 것 ===== */
+:root{
+  --bg:#0b0d10;--card:#12161c;--card-2:#0e1620;--line:#262d36;--line-blue:#1c4a6b;
+  --text:#EFE7D3;--mut:#b3a891;--blue:#0E8C86;--cream:#EFE7D3;--teal:#0E8C86;--pink:#e96cff;
+  --radius:14px;--wrap:1160px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:"Pretendard","Malgun Gothic",system-ui,sans-serif;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 28px}
+a{color:inherit;text-decoration:none}
+.cream{color:var(--cream)}.teal{color:var(--teal)}.mut{color:var(--mut)}b{color:var(--cream)}
+.link{color:var(--blue);font-size:14px;font-weight:600}
+.link:hover{text-decoration:underline}
+
+/* Header — Apple식 미니멀 스티키 + Pixar 대분류 */
+.site-header{position:sticky;top:0;z-index:50;background:rgba(11,13,16,.82);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo-img{height:36px;width:auto;display:block}
+.nav{display:flex;gap:30px;font-size:15px;font-weight:500}
+.nav a{color:var(--text);opacity:.82;transition:opacity .2s,color .2s}
+.nav a:hover{opacity:1;color:var(--blue)}
+
+/* Hero — Apple 풀블리드 */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;padding:80px 0}
+.hero-eyebrow{color:var(--teal);font-size:13px;letter-spacing:4px;font-weight:700;text-transform:uppercase;text-shadow:0 1px 10px rgba(0,0,0,.55)}
+.hero-title{color:var(--teal);font-size:clamp(34px,7vw,68px);font-weight:800;line-height:1.15;margin:16px 0;text-shadow:0 2px 22px rgba(0,0,0,.6)}
+.hero-sub{color:var(--cream);font-size:clamp(15px,2vw,19px);margin-bottom:28px;text-shadow:0 1px 14px rgba(0,0,0,.6)}
+.hero-ctas{display:flex;gap:18px;justify-content:center;align-items:center;flex-wrap:wrap}
+/* Youtube 버튼 — 작당사이트 스타일(투명+보더→호버 채움) 참조, 링크는 난다 */
+.btn-yt{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border:1px solid rgba(255,255,255,.65);border-radius:999px;color:#fff;font-size:14px;font-weight:600;transition:background .2s,color .2s,border-color .2s}
+.btn-yt:hover{background:var(--teal);border-color:var(--teal);color:#fff}
+.btn-yt .yt{color:#ff4b4b;font-size:15px}
+.btn-yt:hover .yt{color:#fff}
+.hero-glow{position:absolute;top:-25%;left:50%;transform:translateX(-50%);width:900px;height:900px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(110,198,255,.12),rgba(14,140,134,.05) 40%,transparent 62%);z-index:-1}
+/* 히어로 배경 영상 (JD 골조 이식) */
+.hero-video{position:absolute;inset:0;z-index:-3;overflow:hidden;background:#0b0d10}
+.hero-video video{width:100%;height:100%;object-fit:cover}
+.hero-overlay{position:absolute;inset:0;z-index:-2;background:transparent}
+.hero-content{position:relative;z-index:1}
+/* 메인컬러 자동 단어 */
+.brand{color:var(--teal);font-weight:800}
+/* 네비 스크롤 blur + 모바일 토글 */
+.site-header.scrolled{background:rgba(11,13,16,.94);backdrop-filter:blur(16px);border-bottom-color:#1c2530}
+.nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
+.nav-toggle span{display:block;width:24px;height:2px;background:var(--text);border-radius:2px;transition:.2s}
+@media(max-width:640px){
+  .nav-toggle{display:flex}
+  .nav{display:none}
+  .nav.open{display:flex;flex-direction:column;gap:14px;position:absolute;top:64px;left:0;right:0;background:rgba(11,13,16,.97);backdrop-filter:blur(16px);padding:18px 28px;border-bottom:1px solid var(--line)}
+}
+
+/* Section */
+.section{padding:84px 0;border-top:1px solid var(--line)}
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+.sec-title{color:var(--teal);font-size:clamp(24px,3.4vw,34px);font-weight:800}
+.sec-title .mut{font-weight:500;font-size:.6em}
+.sub-title{color:var(--teal);font-size:20px;font-weight:800}
+.sub-title .mut{font-weight:500;font-size:.65em}
+
+/* Films grid — Pixar 작품 카드 */
+.filmgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.film{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);background:var(--card);aspect-ratio:3/4;transition:transform .25s,border-color .25s}
+.film:hover{transform:translateY(-4px);border-color:var(--line-blue)}
+.film .thumb{position:absolute;inset:0;background:linear-gradient(160deg,#12202b,#0b0d10);display:flex;align-items:center;justify-content:center;font-size:44px;opacity:.9}
+.film .meta{position:absolute;left:0;right:0;bottom:0;padding:18px;background:linear-gradient(transparent,rgba(0,0,0,.82))}
+.film .meta h3{font-size:17px;font-weight:800;margin-bottom:3px}
+.film .meta p{font-size:12.5px;color:var(--mut)}
+.film .badge{position:absolute;top:12px;left:12px;font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:rgba(14,140,134,.22);color:var(--teal);border:1px solid #1c5a55}
+.film .badge.soon{background:rgba(139,152,168,.15);color:var(--mut);border-color:#333}
+
+/* Characters grid */
+.chargrid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.char{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;text-align:center;transition:transform .22s,border-color .22s}
+.char:hover{transform:translateY(-4px);border-color:var(--line-blue)}
+.char .ava{width:88px;height:88px;border-radius:50%;margin:0 auto 12px;background:radial-gradient(circle at 35% 30%,#1a2a36,#0b0d10);display:flex;align-items:center;justify-content:center;font-size:38px;border:1px solid var(--line-blue)}
+.char h3{font-size:16px;font-weight:800}
+.char .role{font-size:12px;color:var(--teal);margin:2px 0 8px}
+.char p{font-size:12.5px;color:var(--mut)}
+
+/* Character profile — 난다 1명 (좌 사진 / 우 프로필) · 2:1 fr 비율, 픽셀 고정 없음 */
+.char-profile{display:grid;grid-template-columns:2fr 1fr;gap:44px;align-items:center}
+.cp-photo{border-radius:18px;overflow:hidden;border:1px solid var(--line-blue);background:var(--card)}
+.cp-photo img{width:100%;height:auto;display:block}
+.cp-eyebrow{color:var(--teal);font-size:12px;letter-spacing:3px;font-weight:700;text-transform:uppercase}
+.cp-name{color:var(--teal);font-size:clamp(28px,4vw,42px);font-weight:800;margin:6px 0}
+.cp-name .cp-en{font-size:.42em;color:var(--mut);font-weight:600;letter-spacing:2px;margin-left:10px}
+.cp-tag{color:var(--text);font-size:15px;margin-bottom:18px}
+.cp-spec>div{display:grid;grid-template-columns:88px 1fr;gap:16px;padding:11px 0;border-top:1px solid var(--line)}
+.cp-spec dt{color:var(--blue);font-size:13px;font-weight:700}
+.cp-spec dd{color:var(--text);font-size:13.5px}
+.cp-note{margin-top:16px;font-size:12px;color:var(--mut)}
+@media(max-width:760px){.char-profile{grid-template-columns:1fr;gap:22px}}
+
+/* More grid — World + Design */
+.more-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.more-card{background:var(--card-2);border:1px solid var(--line-blue);border-radius:16px;padding:26px 28px}
+.more-card h3{font-size:18px;color:var(--blue);margin-bottom:10px}
+.more-card p{font-size:13.5px;color:var(--text);margin:6px 0}
+.chip{display:inline-block;width:13px;height:13px;border-radius:3px;border:1px solid #555;vertical-align:middle;margin:0 3px}
+
+/* Page hero (Characters page) */
+.page-hero{padding:80px 0 30px;text-align:center;border-bottom:1px solid var(--line)}
+.page-hero h1{color:var(--teal);font-size:clamp(30px,5vw,48px);font-weight:800}
+.page-hero p{color:var(--mut);margin-top:10px}
+
+/* Footer — 좌측 NANDA STORY + 카피라이트 */
+.site-footer{border-top:1px solid var(--line);padding:30px 0;font-size:13px;color:var(--mut)}
+.foot-brand{font-size:15px;font-weight:800;letter-spacing:.5px}
+.foot-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:12px}
+.foot-copy{color:var(--mut);font-size:12px}
+.foot-addr{color:var(--mut);font-size:12px}
+.foot-cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px;margin-bottom:26px}
+.foot-cols h4{color:var(--text);font-size:13px;margin-bottom:10px}
+.foot-cols a{display:block;color:var(--mut);padding:3px 0}
+.foot-cols a:hover{color:var(--blue)}
+.foot-bottom{border-top:1px solid var(--line);padding-top:18px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:900px){
+  .filmgrid{grid-template-columns:repeat(2,1fr)}
+  .chargrid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:640px){
+  .filmgrid,.chargrid,.more-grid,.foot-cols{grid-template-columns:1fr}
+  .nav{gap:16px;font-size:13.5px}
+}

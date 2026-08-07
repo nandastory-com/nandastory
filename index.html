@@ -1,10 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <title> Nanda Story</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>난다스토리 · NANDA STORY</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1> Nanda Story - Under Construction</h1>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="index.html" class="logo"><img class="logo-img" src="img/logo.png" alt="NANDA STORY"></a>
+    <nav class="nav" id="nav">
+      <a href="#characters">Characters</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO (배경 영상 · 상대경로 참조, 복사 안 함) -->
+<section class="hero" id="top">
+  <div class="hero-video" aria-hidden="true">
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="mov/Nanda_Hero.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="wrap hero-content">
+    <p class="hero-eyebrow">100년 연대기 · 유작</p>
+    <h1 class="hero-title">난다 — <span class="cream">아빠의</span> 또 다른 <span class="teal">나</span></h1>
+    <p class="hero-sub">여린 울보 소녀와 최종병기, 한 몸의 이중 정체.<br>유일한 초과학은 시간 제어, 나머지는 전부 현실 물리.</p>
+    <div class="hero-ctas">
+      <a href="https://www.youtube.com/@nandastory_com" target="_blank" rel="noopener" class="btn-yt"><span class="yt">▶</span> Youtube 바로가기 →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CHARACTERS (난다 1명 · 프로필) -->
+<section class="section reveal" id="characters">
+  <div class="wrap">
+    <div class="sec-head"><h2 class="sec-title">Characters <span class="mut">캐릭터</span></h2></div>
+    <div class="char-profile">
+      <div class="cp-photo"><img src="../../Img/Nanda_Profile.jpg" alt="난다 (NANDA)"></div>
+      <div class="cp-info">
+        <p class="cp-eyebrow">주인공</p>
+        <h3 class="cp-name">난다<span class="cp-en">NANDA</span></h3>
+        <p class="cp-tag">아빠의 또 다른 나 — 여린 울보 소녀 ↔ 최종병기</p>
+        <dl class="cp-spec">
+          <div><dt>정체</dt><dd>아빠의 또 다른 나. "난 다" = 난다(fly) · 난(I am) · 다(others).</dd></div>
+          <div><dt>이중 정체</dt><dd>평상시 여린 울보 소녀(위장) ∥ 발동 시 전신 사이보그 최종병기.</dd></div>
+          <div><dt>능력</dt><dd>시간 제어 — 유일한 초과학, 나머지는 전부 현실 물리.</dd></div>
+          <div><dt>무대</dt><dd>아이슬란드 · 국적 한국.</dd></div>
+          <div><dt>정체색</dt><dd><span class="chip" style="background:#EFE7D3"></span>크림 <span class="chip" style="background:#0E8C86"></span>틸 <span class="chip" style="background:#0A0A0C;border-color:#333"></span>블랙</dd></div>
+        </dl>
+        <p class="cp-note">※ 프로필 상세는 디자인 노트에서 확정 예정.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER (NANDA STORY / 좌 카피라이트 · 우 집주소+도메인) -->
+<footer class="site-footer">
+  <div class="wrap">
+    <h4 class="foot-brand"><span class="teal">NANDA</span> <span class="cream">STORY</span></h4>
+    <div class="foot-row">
+      <span class="foot-copy">© 2026 NANDA STORY ehf. All rights reserved.</span>
+      <span class="foot-addr">Tel : +354 555 0116 · Vatnskot, Þingvellir, Iceland · nandastory.com</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
 </body>
 </html>

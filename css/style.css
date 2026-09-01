@@ -22,11 +22,11 @@ a{color:inherit;text-decoration:none}
 .nav a:hover{opacity:1;color:var(--blue)}
 
 /* Hero — Apple 풀블리드 */
-.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;padding:80px 0}
+.hero{position:relative;min-height:100vh;display:flex;align-items:stretch;justify-content:center;text-align:center;overflow:hidden;padding:80px 0}
 .hero-eyebrow{color:var(--teal);font-size:13px;letter-spacing:4px;font-weight:700;text-transform:uppercase;text-shadow:0 1px 10px rgba(0,0,0,.55)}
-.hero-title{color:var(--teal);font-size:clamp(34px,7vw,68px);font-weight:800;line-height:1.15;margin:16px 0;text-shadow:0 2px 22px rgba(0,0,0,.6)}
+.hero-title{color:var(--teal);font-size:clamp(17px,3.5vw,34px);font-weight:800;line-height:1.15;margin:0;text-shadow:0 2px 22px rgba(0,0,0,.6);white-space:nowrap;text-align:center;position:absolute;left:0;right:0;top:0%;transform:translateY(-50%);opacity:.6}
 .hero-sub{color:var(--cream);font-size:clamp(15px,2vw,19px);margin-bottom:28px;text-shadow:0 1px 14px rgba(0,0,0,.6)}
-.hero-ctas{display:flex;gap:18px;justify-content:center;align-items:center;flex-wrap:wrap}
+.hero-ctas{display:flex;gap:18px;justify-content:center;align-items:center;flex-wrap:wrap;position:absolute;left:0;right:0;top:90%;transform:translateY(-50%)}
 /* Youtube 버튼 — 작당사이트 스타일(투명+보더→호버 채움) 참조, 링크는 난다 */
 .btn-yt{display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border:1px solid rgba(255,255,255,.65);border-radius:999px;color:#fff;font-size:14px;font-weight:600;transition:background .2s,color .2s,border-color .2s}
 .btn-yt:hover{background:var(--teal);border-color:var(--teal);color:#fff}
@@ -37,7 +37,7 @@ a{color:inherit;text-decoration:none}
 .hero-video{position:absolute;inset:0;z-index:-3;overflow:hidden;background:#0b0d10}
 .hero-video video{width:100%;height:100%;object-fit:cover}
 .hero-overlay{position:absolute;inset:0;z-index:-2;background:transparent}
-.hero-content{position:relative;z-index:1}
+.hero-content{position:relative;z-index:1;min-height:100%;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center}
 /* 메인컬러 자동 단어 */
 .brand{color:var(--teal);font-weight:800}
 /* 네비 스크롤 blur + 모바일 토글 */
